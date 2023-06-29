@@ -31,6 +31,6 @@ int SumOddNumbers ( int [] array)
     }
      
 
-int [] arr = CreateArray (6, 0, 4);
+int [] arr = CreateArray (6, -5, 4);
 int sum = SumOddNumbers(arr);
-Console.WriteLine(sum);
+Console.WriteLine($" Sum of numbers in odd position in array is : {sum}");
