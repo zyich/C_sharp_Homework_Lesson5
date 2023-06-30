@@ -21,36 +21,34 @@ double[] CreateArray(int size, double minValue, double maxValue)
 double FindMaxRemaindernumber (double []array)
     {
         double MaxRem = 0;
-        
-      for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < array.Length; i++)
       {
-        if (array[i] > MaxRem )
+        if (array[i]%1.0 > MaxRem%1.0 )
         MaxRem = array[i];
-
       }
-    
-       return MaxRem;     
+      return MaxRem%1.0 ;     
     }   
     
 double FindMinRemainderNumber (double []array)
     {
         double MinRem = array[0] ;
+        foreach (double num in array)
+            {
+                if (num%1.0 < MinRem%1.0)
+                    {
+                         MinRem = num;
 
+                    }
 
-foreach (double num in array)
-{
-    if (num < MinRem)
-    {
-        MinRem = num;
-
+            }
+            return MinRem%1.0;
     }
 
-      }
-    return MinRem;
-    }
-double[] arr = CreateArray(4, 1,10);
+
+double[] arr = CreateArray(5, 1,3);
 Console.WriteLine("[" + string.Join(", ", arr) + "]");
 double max = FindMaxRemaindernumber(arr);
 double min = FindMinRemainderNumber(arr);
-Console.WriteLine($"max number here is {max} and  min number here is {min}");
+double  difference =  max -  min ; 
+Console.WriteLine($"max remainder  here is {max} and  min remaider here is {min} and difference between max and min is {difference}");
 
